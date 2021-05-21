@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <title>Galaga, Colton Hill</title>
+</head>
+
+
+<body onload = "Game.main.initialize();">
+    <div id = "main">
+
+        <div id = "main-menu" class = "screen">
+            <ul class = "menu">
+                <li><h3>Main Menu</h3></li>
+                <li><button id = "new-game-button">New&nbsp;Game</button></li>
+                <li><button id = "high-scores-button">High&nbsp;Scores</button></li>
+                <li><button id = "controls-button">Controls</button></li>
+                <li><button id = "credits-button">Credits</button></li>
+            </ul>
+        </div>
+
+        <div id = "high-scores" class = "screen">
+            <ul class = "menu">
+                <li><h3>High Scores</h3></li>
+                <li>
+                    <ol id = "leaderBoard"></ol>
+                </li>
+                <li><button id = "main-button(high-scores)">Main&nbsp;Menu</button></li>
+            </ul>
+        </div>
+
+        <div id = "pause" class = "screen">
+            <ul class = "menu">
+                <li><h3>Pause Menu</h3></li>
+                <li><button id = "resume-game">Resume&nbsp;Game</button></li>
+                <li><button id = "quit-game">Quit&nbsp;Game</button></li>
+            </ul>
+        </div>
+
+        <div id = "controls" class = "screen">
+            <ul class = "menu control">
+                <li><h3>Control Settings</h3></li>
+                <li class="input"><p class="label">Fire</p> <p id="fire-input" class = "input">404</p></li>
+                <li class="input"><p class="label">Move Left</p> <p id="move-left-input" class = "input">404</p></li>
+                <li class="input"><p class="label">Move Right</p> <p id="move-right-input" class = "input">404</p></li>
+                <li><button class="center" id = "main-button(controls)">Main Menu</button></li>
+            </ul>
+        </div>
+
+        <div id = "credits" class = "screen">
+            <ul class = "menu">
+                <li><h3>Credits</h3></li>
+                <li><p>Author: Colton Hill</p></li>
+                <li><button id = "main-button(credits)">Main&nbsp;Menu</button></li>
+            </ul>
+        </div>
+
+        <div id = "game-screen" class = "screen">
+            <canvas id = "canvas" width="900" height="1100"></canvas>
+        </div>
+
+    </div>
+
+    <script> 
+        let Game = {
+            screens : {},
+            input: {},
+            controlMap: {fire:'', left:'', right:''},
+            render: []
+        };
+    </script>
+    <script src = "scripts/util.js"></script>
+    <script src = "scripts/sound.js"></script>
+    <!-- <script src = 'scripts/controls.js'></script> -->
+    <script src="scripts/controls/input.js"></script>
+    <script src="scripts/render/graphics.js"></script>
+    <script src="scripts/render/particleSystem.js"></script>
+
+    <script src="scripts/screens/main.js"> </script>
+    <script src="scripts/screens/controls.js"></script>
+
+    <script src="scripts/controls/attract-mode.js"></script>
+    <script src="scripts/components.js"></script>
+    <script src="scripts/game-model.js"></script>
+
+    <script src="scripts/screens/game.js"></script>
+    <script src="scripts/screens/mainMenu.js"></script>
+    <script src="scripts/screens/highScore.js"></script>
+    <script src="scripts/screens/pause.js"></script>
+    <script src="scripts/screens/credits.js"></script>
+
+
+
+</body>
+</html>
